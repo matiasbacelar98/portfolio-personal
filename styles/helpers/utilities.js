@@ -27,7 +27,7 @@ export const utilityClasses = css`
   }
 
   //--------- Typography ---------//
-  .primary {
+  .clr-primary {
     color: var(--clr-primary);
   }
 
@@ -47,6 +47,14 @@ export const utilityClasses = css`
   .wrapper {
     width: min(90%, 100rem); // 100rem = 1600px
     margin-inline: auto;
+  }
+
+  .max-width-800 {
+    max-width: 800px; // 50rem
+  }
+
+  .max-width-550 {
+    max-width: 550px; // 34.375rem
   }
 
   //--------- Various ---------//
