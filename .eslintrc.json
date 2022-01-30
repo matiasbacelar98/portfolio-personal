@@ -47,7 +47,10 @@
   "settings": {
     "import/resolver": {
       "alias": {
-        "map": [["@/components", "./components"]],
+        "map": [
+          ["@/components", "./components"],
+          ["@/public", "./public"]
+        ],
         "extensions": [".js", ".jsx"]
       },
       "node": {
