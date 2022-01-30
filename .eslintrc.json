@@ -50,6 +50,7 @@
         "map": [
           ["@/components", "./components"],
           ["@/styles", "./styles"],
+          ["@/typography", "./styles/reusable/typography"],
           ["@/public", "./public"]
         ],
         "extensions": [".js", ".jsx"]
