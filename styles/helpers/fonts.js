@@ -1,37 +1,35 @@
 import { css } from 'styled-components';
 
-import MontserratBold from '@/public/fonts/Montserrat-Bold.ttf';
-import MontserratSemibold from '@/public/fonts/Montserrat-SemiBold.ttf';
-import RalewayBold from '@/public/fonts/Raleway-Bold.ttf';
-import RalewayMedium from '@/public/fonts/Raleway-Medium.ttf';
-
-export const mulishAndFiracodeFonts = css`
+export const montserratAndRalewayFonts = css`
   @font-face {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: local('Montserrat Bold'), url(${MontserratBold});
+    src: local('Montserrat Bold'), url('/fonts/Montserrat-Bold.ttf');
   }
+
   @font-face {
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-display: swap;
-    src: local('Montserrat SemiBold'), url(${MontserratSemibold});
+    src: local('Montserrat SemiBold'), url('/fonts/Montserrat-SemiBold.ttf');
   }
+
   @font-face {
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: local('Raleway Bold'), url(${RalewayBold});
+    src: local('Raleway Bold'), url('/fonts/Raleway-Bold.ttf');
   }
+
   @font-face {
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: local('Raleway Medium'), url(${RalewayMedium});
+    src: local('Raleway Medium'), url('/fonts/Raleway-Medium.ttf');
   }
 `;

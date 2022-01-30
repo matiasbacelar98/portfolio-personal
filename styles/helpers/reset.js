@@ -42,11 +42,6 @@ export const reset = css`
     line-height: var(--line-height-headings);
   }
 
-  // Define default font-size
-  p {
-    font-size: var(--fs-text-large);
-  }
-
   /* Remove list styles on ul, ol elements with a list role,
  which suggests default styling will be removed */
   ul[role='list'],
@@ -65,10 +60,11 @@ export const reset = css`
 
   /* Set core body defaults */
   body {
-    font-family: var(--font);
+    font-family: var(--font-text);
+    font-size: var(--fs-text);
     line-height: var(--line-height-text);
-    background-color: var(--clr-light);
-    color: var(--clr-dark);
+    background-color: var(--clr-background);
+    color: var(--clr-text);
   }
 
   /* A elements that don't have a class get default styles */
