@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# End of line config
+* -text
