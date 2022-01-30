@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />;
 }
