@@ -49,6 +49,7 @@
       "alias": {
         "map": [
           ["@/components", "./components"],
+          ["@/styles", "./styles"],
           ["@/public", "./public"]
         ],
         "extensions": [".js", ".jsx"]
