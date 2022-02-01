@@ -51,6 +51,7 @@
           ["@/components", "./components"],
           ["@/styles", "./styles"],
           ["@/typography", "./styles/reusable/typography"],
+          ["@/utils", "./utils"],
           ["@/public", "./public"]
         ],
         "extensions": [".js", ".jsx"]

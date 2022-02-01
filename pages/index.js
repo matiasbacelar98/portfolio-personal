@@ -1,14 +1,7 @@
 import Test from '@/components/Test';
 
 function Home() {
-  return (
-    <div>
-      home...
-      <div>
-        <Test />
-      </div>
-    </div>
-  );
+  return <Test />;
 }
 
 export default Home;
