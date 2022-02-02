@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+import { fluidValues } from './functions';
 
 export const utilityClasses = css`
   //--------- Spacing ---------//
@@ -31,16 +32,30 @@ export const utilityClasses = css`
     color: var(--clr-primary);
   }
 
-  .bold {
+  .fw-bold {
     font-weight: bold;
+  }
+
+  .fw-medium {
+    font-weight: 500;
   }
 
   .underline {
     text-decoration: underline;
   }
 
-  .active-link {
-    color: var(--clr-primary);
+  .active-link-section {
+    font-size: ${fluidValues(768, 1200, 18, 20)};
+    transition: color 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--clr-primary);
+    }
+
+    &:focus {
+      color: var(--clr-primary);
+    }
   }
 
   //--------- Layout ---------//

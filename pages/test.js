@@ -1,7 +1,7 @@
 import Header from '@/components-i/header/Header';
 
-function Home() {
+function Test() {
   return <Header spacing='header-spacing-top' />;
 }
 
-export default Home;
+export default Test;

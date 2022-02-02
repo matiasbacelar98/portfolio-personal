@@ -49,6 +49,7 @@
       "alias": {
         "map": [
           ["@/components", "./components"],
+          ["@/components-i", "./components/isolated"],
           ["@/styles", "./styles"],
           ["@/typography", "./styles/reusable/typography"],
           ["@/utils", "./utils"],
