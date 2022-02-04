@@ -7,6 +7,7 @@ const StyledBtn = styled.button`
   padding: 0;
   border: 0;
   background-color: transparent;
+  z-index: 20;
 
   &:hover {
     cursor: pointer;

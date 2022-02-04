@@ -32,6 +32,10 @@ export const utilityClasses = css`
     color: var(--clr-primary);
   }
 
+  .clr-bg {
+    color: var(--clr-background);
+  }
+
   .fw-bold {
     font-weight: bold;
   }
@@ -75,6 +79,7 @@ export const utilityClasses = css`
   //--------- Various ---------//
   .remove-scroll {
     overflow-y: hidden;
+    touch-action: none;
   }
 
   .box-shadow {

@@ -8,7 +8,7 @@ export const StyledCustomLink = styled.a`
   text-align: center;
   color: var(--clr-background);
   background-color: var(--clr-primary);
-  border-radius: 0.2rem;
+  border-radius: var(--border-radius);
   transition: transform 0.3s ease;
 
   &::after,

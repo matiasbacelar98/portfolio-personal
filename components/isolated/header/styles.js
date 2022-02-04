@@ -28,6 +28,7 @@ const StyledImgWrapper = styled.div`
   position: relative;
   width: 3.5rem;
   height: 3.5rem;
+  z-index: 20;
 
   .img {
     width: inherit;

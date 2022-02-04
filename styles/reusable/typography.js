@@ -33,4 +33,18 @@ const StyledInfoHeading = styled.span`
   font-weight: bold;
 `;
 
-export { StyledH1, StyledH2, StyledH3, StyledInfoHeading, StyledHeadingProyects };
+const StyledMobileLinks = styled.a`
+  font-size: 1.625rem; // 26px
+  line-height: var(--line-height-headings);
+  font-weight: bold;
+  color: var(--clr-background);
+`;
+
+export {
+  StyledH1,
+  StyledH2,
+  StyledH3,
+  StyledInfoHeading,
+  StyledHeadingProyects,
+  StyledMobileLinks,
+};
