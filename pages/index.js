@@ -1,4 +1,5 @@
 import Header from '@/components-i/header/Header';
+import Footer from '@/components-i/footer/Footer';
 
 function Home() {
   return (
@@ -21,6 +22,8 @@ function Home() {
           seccion contacto
         </p>
       </main>
+
+      <Footer spacing='footer-spacing-top' />
     </>
   );
 }

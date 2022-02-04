@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 import { fluidValues } from './functions';
+import { respondTo } from './media';
 
 export const utilityClasses = css`
   //--------- Spacing ---------//
@@ -23,8 +24,18 @@ export const utilityClasses = css`
     margin-top: var(--fix-spacing-1);
   }
 
+  .footer-spacing-top {
+    margin-top: var(--spacing-section);
+  }
+
   .footer-spacing-bottom {
     margin-bottom: var(--fix-spacing-1);
+  }
+
+  .rm-spacing-lg > * + * {
+    ${respondTo.lg`
+      margin-top: 0;
+    `}
   }
 
   //--------- Typography ---------//

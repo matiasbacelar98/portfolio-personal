@@ -3,23 +3,17 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { AnimatePresence } from 'framer-motion';
 import { StyledCustomLink } from '@/styles/reusable/customLink';
+import Logo from '@/components-r/logo/Logo';
 import HamburguerIcon from './hamburguer-icon/HamburguerIcon';
 import MobileMenu from './mobile-menu/MobileMenu';
-import { StyledHeader, StyledNav, StyledUl, StyledImgWrapper } from './styles';
+import { StyledHeader, StyledNav, StyledUl } from './styles';
 
 const Header = ({ spacing }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <StyledHeader className={`wrapper ${spacing}`}>
-      <StyledImgWrapper>
-        <Link href='/'>
-          <a href='replace'>
-            {/* eslint-disable-next-line */}
-            <img src='/logo.svg' alt='logo' />
-          </a>
-        </Link>
-      </StyledImgWrapper>
+      <Logo />
 
       <StyledNav>
         <StyledUl>
@@ -57,7 +51,12 @@ const Header = ({ spacing }) => {
 
           {/* Download CV */}
           <li>
-            <StyledCustomLink className='fw-medium' href='/CV-Matias-Bacelar.pdf' download>
+            <StyledCustomLink
+              className='fw-medium'
+              href='/CV-Matias-Bacelar.pdf'
+              rel='noopener noreferrer'
+              download
+            >
               CV
             </StyledCustomLink>
           </li>
