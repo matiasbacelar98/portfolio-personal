@@ -3,8 +3,12 @@
     "baseUrl": ".",
     "paths": {
       "@/components/*": ["/components/*"],
+      "@/components-i/*": ["/components/isolated/*"],
+      "@/components-r/*": ["/components/reusable/*"],
       "@/styles/*": ["/styles/*"],
+      "@/hooks/*": ["/hooks/*"],
       "@/typography": ["/styles/reusable/typography"],
+      "@/utils/*": ["/utils/*"],
       "@/public/*": ["/public/*"]
     }
   }

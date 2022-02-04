@@ -70,6 +70,7 @@ export const reset = css`
   /* A elements that don't have a class get default styles */
   a {
     text-decoration: none;
+    color: var(--clr-text);
   }
 
   /* Make images easier to work with */

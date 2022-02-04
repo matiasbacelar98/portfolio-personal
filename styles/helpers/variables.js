@@ -26,6 +26,7 @@ export const variables = css`
     --clr-background: hsl(0, 0%, 100%);
     --shadow-color: 0deg 0% 63%;
     // Others
+    --border-radius: 0.2rem;
     --scrollbar-width: 0;
     --box-shadow: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
       0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),

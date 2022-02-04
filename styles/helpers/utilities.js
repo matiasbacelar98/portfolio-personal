@@ -1,4 +1,6 @@
 import { css } from 'styled-components';
+import { fluidValues } from './functions';
+import { respondTo } from './media';
 
 export const utilityClasses = css`
   //--------- Spacing ---------//
@@ -22,8 +24,18 @@ export const utilityClasses = css`
     margin-top: var(--fix-spacing-1);
   }
 
+  .footer-spacing-top {
+    margin-top: var(--spacing-section);
+  }
+
   .footer-spacing-bottom {
     margin-bottom: var(--fix-spacing-1);
+  }
+
+  .rm-spacing-lg > * + * {
+    ${respondTo.lg`
+      margin-top: 0;
+    `}
   }
 
   //--------- Typography ---------//
@@ -31,16 +43,34 @@ export const utilityClasses = css`
     color: var(--clr-primary);
   }
 
-  .bold {
+  .clr-bg {
+    color: var(--clr-background);
+  }
+
+  .fw-bold {
     font-weight: bold;
+  }
+
+  .fw-medium {
+    font-weight: 500;
   }
 
   .underline {
     text-decoration: underline;
   }
 
-  .active-link {
-    color: var(--clr-primary);
+  .active-link-section {
+    font-size: ${fluidValues(768, 1200, 18, 20)};
+    transition: color 0.3s ease;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--clr-primary);
+    }
+
+    &:focus {
+      color: var(--clr-primary);
+    }
   }
 
   //--------- Layout ---------//
@@ -60,6 +90,7 @@ export const utilityClasses = css`
   //--------- Various ---------//
   .remove-scroll {
     overflow-y: hidden;
+    touch-action: none;
   }
 
   .box-shadow {
