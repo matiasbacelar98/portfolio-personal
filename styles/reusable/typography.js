@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { fluidValues } from '../helpers';
 
 const StyledH1 = styled.h1`
   font-family: var(--font-headings);
@@ -40,6 +42,20 @@ const StyledMobileLinks = styled.a`
   color: var(--clr-background);
 `;
 
+const EntranceHeading = styled(motion.span)`
+  display: block;
+  font-size: ${fluidValues(280, 1200, 32, 56)};
+  font-weight: bold;
+  line-height: var(--line-height-headings);
+  color: var(--clr-background);
+`;
+
+const StyledHighlight = styled(motion.span)`
+  display: block;
+  color: var(--clr-background);
+  letter-spacing: 0.2rem;
+`;
+
 export {
   StyledH1,
   StyledH2,
@@ -47,4 +63,6 @@ export {
   StyledInfoHeading,
   StyledHeadingProyects,
   StyledMobileLinks,
+  EntranceHeading,
+  StyledHighlight,
 };

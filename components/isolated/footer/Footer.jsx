@@ -15,7 +15,7 @@ const Footer = ({ spacing }) => {
   };
 
   return (
-    <footer className={`wrapper footer-spacing-bottom ${spacing}`}>
+    <footer id='contacto' className={`wrapper footer-spacing-bottom ${spacing}`}>
       <StyledTwoColumnGrid className='flow-spacing-text rm-spacing-lg'>
         <StyledContentWrapper>
           <StyledH2>Contactame</StyledH2>

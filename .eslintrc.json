@@ -53,6 +53,7 @@
           ["@/components-r", "./components/reusable"],
           ["@/styles", "./styles"],
           ["@/hooks", "./hooks"],
+          ["@/context", "./context"],
           ["@/typography", "./styles/reusable/typography"],
           ["@/utils", "./utils"],
           ["@/public", "./public"]

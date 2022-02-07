@@ -1,10 +1,8 @@
-import Header from '@/components-i/header/Header';
-import Footer from '@/components-i/footer/Footer';
+import Layout from '@/components-r/layout/Layout';
 
 function Home() {
   return (
-    <>
-      <Header spacing='header-spacing-top' />
+    <Layout headData={{ title: 'Inicio', description: 'Descripcion inicio' }}>
       <main>
         <p id='hero' style={{ height: '100vh', backgroundColor: 'red' }}>
           seccion home
@@ -17,14 +15,8 @@ function Home() {
         <p id='proyectos' style={{ height: '100vh', backgroundColor: 'orange' }}>
           seccion proyectos
         </p>
-
-        <p id='contacto' style={{ height: '100vh', backgroundColor: 'green' }}>
-          seccion contacto
-        </p>
       </main>
-
-      <Footer spacing='footer-spacing-top' />
-    </>
+    </Layout>
   );
 }
 
