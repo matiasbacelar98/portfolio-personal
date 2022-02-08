@@ -1,8 +1,9 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { StyledHighlight, EntranceHeading } from '@/typography';
 import { removeScroll } from '@/utils/utilities';
 import { useAnimationContext } from '@/context/animationContext';
+import { useIsomorphicLayoutEffect } from '@/hooks/index';
 import { StyledWrapper, StyledBg, StyledSvg } from './styles';
 
 const Entrance = () => {
@@ -22,13 +23,11 @@ const Entrance = () => {
   });
 
   // Remove scroll if entrance is active
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (!isEntranceActive) return;
 
-    if (typeof window !== 'undefined') {
-      const htmlNode = document.querySelector('html');
-      removeScroll(htmlNode);
-    }
+    const htmlNode = document.querySelector('html');
+    removeScroll(htmlNode);
   }, [isEntranceActive]);
 
   // Animate Logo
@@ -70,6 +69,11 @@ const Entrance = () => {
     animateLogo();
   }, [logoPathControls]);
 
+  // Unmount entrance
+  setTimeout(() => {
+    setIsEntranceActive(false);
+  }, 5000);
+
   return (
     <StyledBg
       className='center'
@@ -86,8 +90,8 @@ const Entrance = () => {
       }}
     >
       <div className='wrapper center'>
-        <StyledWrapper layout>
-          <motion.div layout>
+        <StyledWrapper layout='position'>
+          <motion.div layout='position'>
             <StyledSvg
               width='125'
               height='125'
@@ -127,7 +131,6 @@ const Entrance = () => {
                     y: window.innerWidth < tabletBreakpoint ? 80 : 60,
                   }}
                   animate={() => textAnimation(0.6)}
-                  onAnimationComplete={() => setIsEntranceActive(false)}
                 >
                   Matias Bacelar
                 </EntranceHeading>

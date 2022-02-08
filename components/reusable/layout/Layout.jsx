@@ -1,16 +1,16 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 import { AnimatePresence } from 'framer-motion';
-import { activateScroll } from '@/utils/utilities';
-import { useDocument } from '@/hooks/index';
+import { useToggleScroll } from '@/hooks/index';
 import { useAnimationContext } from '@/context/animationContext';
 import Header from '@/components-i/header/Header';
 import Footer from '@/components-i/footer/Footer';
 import Entrance from '@/components-i/entrance/Entrance';
+import Transition from '@/components-i/transition/Transition';
 
 const Layout = ({ children, headData }) => {
   const { isEntranceActive } = useAnimationContext();
-  const { htmlNode } = useDocument();
+  const [setScrollbarAction] = useToggleScroll();
 
   return (
     <>
@@ -24,9 +24,12 @@ const Layout = ({ children, headData }) => {
       <Footer spacing='footer-spacing-top' />
 
       {/* Entrance Animation */}
-      <AnimatePresence onExitComplete={() => activateScroll(htmlNode)}>
+      <AnimatePresence onExitComplete={() => setScrollbarAction('add')}>
         {isEntranceActive ? <Entrance /> : null}
       </AnimatePresence>
+
+      {/* Transition Animation */}
+      <Transition isEntranceActive={isEntranceActive} />
     </>
   );
 };

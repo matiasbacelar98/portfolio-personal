@@ -1,10 +1,11 @@
 /* eslint-disable */
-import AnimationProvider from '@/context/animationContext';
 import { useEffect } from 'react';
-import GlobalStyles from '@/styles/globalStyles';
 import useScrollbarSize from 'react-scrollbar-size';
+import { AnimatePresence } from 'framer-motion';
+import AnimationProvider from '@/context/animationContext';
+import GlobalStyles from '@/styles/globalStyles';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   const { width } = useScrollbarSize();
 
   // set css variable with browser scrollbar width & calculate space
@@ -19,7 +20,10 @@ function MyApp({ Component, pageProps }) {
     <AnimationProvider>
       <>
         <GlobalStyles />
-        <Component {...pageProps} />
+
+        <AnimatePresence exitBeforeEnter>
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
       </>
     </AnimationProvider>
   );

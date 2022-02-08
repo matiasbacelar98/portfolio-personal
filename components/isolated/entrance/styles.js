@@ -17,6 +17,7 @@ const StyledWrapper = styled(motion.div)`
   align-items: center;
   justify-content: center;
   max-width: 37.5rem; // 600px
+  width: 100%;
 
   & > * + * {
     margin-left: ${fluidValues(280, 768, 8, 24)};
