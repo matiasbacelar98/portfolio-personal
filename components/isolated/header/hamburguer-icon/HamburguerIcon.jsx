@@ -1,15 +1,14 @@
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
-import { activateScroll, removeScroll } from '@/utils/utilities';
-import { useDocument } from '@/hooks/index';
+import { useToggleScroll } from '@/hooks/index';
 import { StyledBtn } from './styles';
 
 const HamburguerIcon = ({ isMenuOpen, setIsMenuOpen }) => {
-  const { htmlNode } = useDocument();
+  const [setScrollbarAction] = useToggleScroll();
 
   const toggleMenu = () => {
     setIsMenuOpen(prev => !prev);
-    isMenuOpen ? activateScroll(htmlNode) : removeScroll(htmlNode);
+    isMenuOpen ? setScrollbarAction('add') : setScrollbarAction('remove');
   };
 
   return (

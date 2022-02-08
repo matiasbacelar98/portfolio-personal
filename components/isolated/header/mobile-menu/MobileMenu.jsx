@@ -1,26 +1,25 @@
 import { useRef } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
-import { useClickOutside, useDocument } from '@/hooks/index';
-import { activateScroll, removeScroll } from '@/utils/utilities';
+import { useClickOutside, useToggleScroll } from '@/hooks/index';
 import { StyledMobileLinks } from '@/typography';
 import { StyledContainer, StyledNav, StyledUl, StyledBgBlur } from './styles';
 
 const MobileMenu = ({ isMenuOpen, setIsMenuOpen }) => {
-  const { htmlNode } = useDocument();
+  const [setScrollbarAction] = useToggleScroll();
   const menuRef = useRef(null);
 
   const closeMenu = () => {
     setTimeout(() => {
       setIsMenuOpen(false);
-      isMenuOpen ? activateScroll(htmlNode) : removeScroll(htmlNode);
+      isMenuOpen ? setScrollbarAction('add') : setScrollbarAction('remove');
     }, 800);
   };
 
   // close mobile menu when user click outside
   useClickOutside(menuRef, () => {
     setIsMenuOpen(false);
-    isMenuOpen ? activateScroll(htmlNode) : removeScroll(htmlNode);
+    setScrollbarAction('add');
   });
 
   return (

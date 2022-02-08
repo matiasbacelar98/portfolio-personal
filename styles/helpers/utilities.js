@@ -87,6 +87,11 @@ export const utilityClasses = css`
     max-width: 550px; // 34.375rem
   }
 
+  .center {
+    display: grid;
+    place-items: center;
+  }
+
   //--------- Various ---------//
   .remove-scroll {
     overflow-y: hidden;
