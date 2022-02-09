@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { useClickOutside, useToggleScroll } from '@/hooks/index';
-import { StyledMobileLinks } from '@/typography';
+import { StyledMobileLinks } from '@/styles/reusable/links';
 import { StyledContainer, StyledNav, StyledUl, StyledBgBlur } from './styles';
 
 const MobileMenu = ({ isMenuOpen, setIsMenuOpen }) => {
@@ -45,34 +45,26 @@ const MobileMenu = ({ isMenuOpen, setIsMenuOpen }) => {
         <StyledNav>
           <StyledUl>
             <li>
-              <Link href='/#hero' scroll={false} passHref>
-                <StyledMobileLinks href='replace' onClick={closeMenu}>
-                  Inicio
-                </StyledMobileLinks>
+              <Link href='/#hero' passHref>
+                <StyledMobileLinks onClick={closeMenu}>Inicio</StyledMobileLinks>
               </Link>
             </li>
 
             <li>
-              <Link href='/#sobremi' scroll={false} passHref>
-                <StyledMobileLinks href='replace' onClick={closeMenu}>
-                  Sobre mi
-                </StyledMobileLinks>
+              <Link href='/#sobremi' passHref>
+                <StyledMobileLinks onClick={closeMenu}>Sobre mi</StyledMobileLinks>
               </Link>
             </li>
 
             <li>
-              <Link href='/#proyectos' scroll={false} passHref>
-                <StyledMobileLinks href='replace' onClick={closeMenu}>
-                  Proyectos
-                </StyledMobileLinks>
+              <Link href='/#proyectos' passHref>
+                <StyledMobileLinks onClick={closeMenu}>Proyectos</StyledMobileLinks>
               </Link>
             </li>
 
             <li>
-              <Link href='/#contacto' scroll={false} passHref>
-                <StyledMobileLinks href='replace' onClick={closeMenu}>
-                  Contacto
-                </StyledMobileLinks>
+              <Link href='/#contacto' passHref>
+                <StyledMobileLinks onClick={closeMenu}>Contacto</StyledMobileLinks>
               </Link>
             </li>
 

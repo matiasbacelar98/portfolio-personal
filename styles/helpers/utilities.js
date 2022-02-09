@@ -59,20 +59,6 @@ export const utilityClasses = css`
     text-decoration: underline;
   }
 
-  .active-link-section {
-    font-size: ${fluidValues(768, 1200, 18, 20)};
-    transition: color 0.3s ease;
-
-    &:hover {
-      cursor: pointer;
-      color: var(--clr-primary);
-    }
-
-    &:focus {
-      color: var(--clr-primary);
-    }
-  }
-
   //--------- Layout ---------//
   .wrapper {
     width: min(90%, 100rem); // 100rem = 1600px
@@ -100,5 +86,10 @@ export const utilityClasses = css`
 
   .box-shadow {
     box-shadow: var(--box-shadow);
+  }
+
+  .inherit-dimensions {
+    width: inherit;
+    height: inherit;
   }
 `;

@@ -35,13 +35,6 @@ const StyledInfoHeading = styled.span`
   font-weight: bold;
 `;
 
-const StyledMobileLinks = styled.a`
-  font-size: 1.625rem; // 26px
-  line-height: var(--line-height-headings);
-  font-weight: bold;
-  color: var(--clr-background);
-`;
-
 const EntranceHeading = styled(motion.span)`
   display: block;
   font-size: ${fluidValues(280, 1200, 32, 56)};
@@ -62,7 +55,6 @@ export {
   StyledH3,
   StyledInfoHeading,
   StyledHeadingProyects,
-  StyledMobileLinks,
   EntranceHeading,
   StyledHighlight,
 };

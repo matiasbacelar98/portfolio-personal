@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { AnimatePresence } from 'framer-motion';
-import { StyledCustomLink } from '@/styles/reusable/customLink';
+import { StyledCustomLink, StyledAnchorLink } from '@/styles/reusable/links';
 import Logo from '@/components-r/logo/Logo';
 import HamburguerIcon from './hamburguer-icon/HamburguerIcon';
 import MobileMenu from './mobile-menu/MobileMenu';
@@ -18,34 +18,26 @@ const Header = ({ spacing }) => {
       <StyledNav>
         <StyledUl>
           <li>
-            <Link href='#hero' scroll={false}>
-              <a href='replace' className='fw-medium active-link-section'>
-                Inicio
-              </a>
+            <Link href='/#hero' passHref>
+              <StyledAnchorLink className='fw-medium'>Inicio</StyledAnchorLink>
             </Link>
           </li>
 
           <li>
-            <Link href='#sobremi' scroll={false}>
-              <a href='replace' className='fw-medium active-link-section'>
-                Sobre mi
-              </a>
+            <Link href='/#sobremi' passHref>
+              <StyledAnchorLink className='fw-medium'>Sobre mi</StyledAnchorLink>
             </Link>
           </li>
 
           <li>
-            <Link href='#proyectos' scroll={false}>
-              <a href='replace' className='fw-medium active-link-section'>
-                Proyectos
-              </a>
+            <Link href='/#proyectos' passHref>
+              <StyledAnchorLink className='fw-medium'>Proyectos</StyledAnchorLink>
             </Link>
           </li>
 
           <li>
-            <Link href='#contacto' scroll={false}>
-              <a href='replace' className='fw-medium active-link-section'>
-                Contacto
-              </a>
+            <Link href='#contacto' passHref>
+              <StyledAnchorLink className='fw-medium'>Contacto</StyledAnchorLink>
             </Link>
           </li>
 

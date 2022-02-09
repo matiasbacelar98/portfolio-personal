@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { fluidValues } from '@/styles/helpers';
 
-export const StyledCustomLink = styled.a`
+const StyledCustomLink = styled.a`
   display: inline-block;
   position: relative;
   width: ${props => (props.big ? '12rem' : '9rem')};
@@ -44,3 +45,26 @@ export const StyledCustomLink = styled.a`
     transform: translate(0);
   }
 `;
+
+const StyledAnchorLink = styled.a`
+  font-size: ${fluidValues(768, 1200, 18, 20)};
+  transition: color 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    color: var(--clr-primary);
+  }
+
+  &:focus {
+    color: var(--clr-primary);
+  }
+`;
+
+const StyledMobileLinks = styled.a`
+  font-size: 1.625rem; // 26px
+  line-height: var(--line-height-headings);
+  font-weight: bold;
+  color: var(--clr-background);
+`;
+
+export { StyledCustomLink, StyledAnchorLink, StyledMobileLinks };

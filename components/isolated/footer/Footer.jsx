@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import { StyledH2 } from '@/typography';
 import github from 'react-useanimations/lib/github';
@@ -10,7 +11,10 @@ import { StyledTwoColumnGrid } from '@/styles/reusable/twoColumnGrid';
 import { StyledButton, StyledLogoArticle, StyledContentWrapper, StyledIconsGrid } from './styles';
 
 const Footer = ({ spacing }) => {
+  const router = useRouter();
+
   const toTop = () => {
+    router.push('/', undefined, { shallow: true });
     window.scrollTo(0, 0);
   };
 
