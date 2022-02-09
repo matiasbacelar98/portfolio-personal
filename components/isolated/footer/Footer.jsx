@@ -11,10 +11,15 @@ import { StyledTwoColumnGrid } from '@/styles/reusable/twoColumnGrid';
 import { StyledButton, StyledLogoArticle, StyledContentWrapper, StyledIconsGrid } from './styles';
 
 const Footer = ({ spacing }) => {
-  const router = useRouter();
+  const { pathname, push } = useRouter();
+  const homePathname = '/';
 
   const toTop = () => {
-    router.push('/', undefined, { shallow: true });
+    // Only if we are in home route
+    if (pathname === homePathname) {
+      push('/', undefined, { shallow: true });
+    }
+
     window.scrollTo(0, 0);
   };
 

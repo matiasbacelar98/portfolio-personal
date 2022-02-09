@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 function Home() {
   return (
-    <Layout headData={{ title: 'Inicio', description: 'Descripcion inicio' }}>
+    <Layout headData={{ title: 'Inicio', description: 'Descripcion inicio' }} route='/'>
       <main>
         <Link href='/test'>ir a test route</Link>
 

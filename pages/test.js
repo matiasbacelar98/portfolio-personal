@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Test = () => {
   return (
-    <Layout headData={{ title: 'Test', description: 'Descripcion test' }}>
+    <Layout headData={{ title: 'Test', description: 'Descripcion test' }} route='/test'>
       <Link href='/'>volver a Inicio</Link>
     </Layout>
   );
