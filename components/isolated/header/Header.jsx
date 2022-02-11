@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { AnimatePresence } from 'framer-motion';
@@ -10,6 +11,9 @@ import { StyledHeader, StyledNav, StyledUl } from './styles';
 
 const Header = ({ spacing, route }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const router = useRouter();
+  const { id } = router.query;
 
   return (
     <StyledHeader className={`wrapper ${spacing}`}>
@@ -36,19 +40,24 @@ const Header = ({ spacing, route }) => {
                   <StyledAnchorLink className='fw-medium'>Proyectos</StyledAnchorLink>
                 </Link>
               </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <Link href='/' passHref>
+                  <StyledAnchorLink className='fw-medium'>Volver a inicio</StyledAnchorLink>
+                </Link>
+              </li>
 
               <li>
-                <Link href='#contacto' passHref>
+                <Link
+                  href={`${route === '/' ? '/#contacto' : `/proyectos/${id}#contacto`}`}
+                  passHref
+                >
                   <StyledAnchorLink className='fw-medium'>Contacto</StyledAnchorLink>
                 </Link>
               </li>
             </>
-          ) : (
-            <li>
-              <Link href='/' passHref>
-                <StyledAnchorLink className='fw-medium'>Volver a inicio</StyledAnchorLink>
-              </Link>
-            </li>
           )}
 
           {/* Download CV */}
@@ -67,8 +76,10 @@ const Header = ({ spacing, route }) => {
 
       <HamburguerIcon isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
-      <AnimatePresence>
-        {isMenuOpen ? <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} /> : null}
+      <AnimatePresence exitBeforeEnter>
+        {isMenuOpen ? (
+          <MobileMenu route={route} id={id} isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        ) : null}
       </AnimatePresence>
     </StyledHeader>
   );

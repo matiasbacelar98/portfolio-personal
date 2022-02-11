@@ -5,7 +5,7 @@ function Home() {
   return (
     <Layout headData={{ title: 'Inicio', description: 'Descripcion inicio' }} route='/'>
       <main>
-        <Link href='/test'>ir a test route</Link>
+        <Link href='/proyectos/1'>ir a ruta dinamica 1</Link>
 
         <p id='hero' style={{ height: '100vh', backgroundColor: 'red' }}>
           seccion home

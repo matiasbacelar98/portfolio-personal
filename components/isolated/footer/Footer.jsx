@@ -11,13 +11,15 @@ import { StyledTwoColumnGrid } from '@/styles/reusable/twoColumnGrid';
 import { StyledButton, StyledLogoArticle, StyledContentWrapper, StyledIconsGrid } from './styles';
 
 const Footer = ({ spacing }) => {
-  const { pathname, push } = useRouter();
+  const { pathname, push, query } = useRouter();
   const homePathname = '/';
 
   const toTop = () => {
-    // Only if we are in home route
+    // Clean url
     if (pathname === homePathname) {
       push('/', undefined, { shallow: true });
+    } else {
+      push(`/proyectos/${query.id}`, undefined, { shallow: true });
     }
 
     window.scrollTo(0, 0);
