@@ -51,6 +51,7 @@
           ["@/components", "./components"],
           ["@/components-i", "./components/isolated"],
           ["@/components-r", "./components/reusable"],
+          ["@/sections", "./sections"],
           ["@/styles", "./styles"],
           ["@/hooks", "./hooks"],
           ["@/context", "./context"],

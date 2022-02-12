@@ -20,6 +20,10 @@ export const utilityClasses = css`
     margin-top: var(--fix-spacing-2);
   }
 
+  .main-spacing-top {
+    margin-top: var(--spacing-section);
+  }
+
   .header-spacing-top {
     margin-top: var(--fix-spacing-1);
   }
