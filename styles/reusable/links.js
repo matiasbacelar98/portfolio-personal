@@ -4,8 +4,8 @@ import { fluidValues } from '@/styles/helpers';
 const StyledCustomLink = styled.a`
   display: inline-block;
   position: relative;
-  width: ${props => (props.big ? '12rem' : '9rem')};
-  padding: ${props => (props.big ? '0.6rem 0' : '0.4rem 0')};
+  width: ${props => (props.big ? '200px' : '9rem')};
+  padding: ${props => (props.big ? '1rem 0' : '0.4rem 0')};
   text-align: center;
   color: var(--clr-background);
   background-color: var(--clr-primary);

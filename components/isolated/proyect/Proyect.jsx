@@ -17,8 +17,8 @@ const Proyect = ({ title, number, imgData }) => {
     <>
       <Link href={isTitleTecnoshop ? `/#proyectos` : `/proyectos/${proyectNumber}`} passHref>
         <StyledWrapper
-          onHoverStart={() => setIsImageActive(true)}
-          onHoverEnd={() => setIsImageActive(false)}
+          onMouseEnter={() => setIsImageActive(true)}
+          onMouseLeave={() => setIsImageActive(false)}
         >
           <div>
             <StyledSpan>({`0${proyectNumber}`})</StyledSpan>

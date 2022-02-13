@@ -3,11 +3,13 @@ import axios from 'axios';
 import Layout from '@/components-r/layout/Layout';
 import About from '@/sections/home/About';
 import Proyects from '@/sections/home/Proyects';
+import Hero from '@/sections/home/Hero';
 
 function Home({ proyectsData }) {
   return (
     <Layout headData={{ title: 'Inicio', description: 'Descripcion inicio' }} route='/'>
       <main className='wrapper flow-spacing-sections'>
+        <Hero />
         <Proyects proyectsData={proyectsData} />
         <About />
       </main>

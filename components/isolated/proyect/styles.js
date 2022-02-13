@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { fluidValues, respondTo } from '@/styles/helpers';
 
-const StyledWrapper = styled(motion.a)`
+const StyledWrapper = styled.a`
   position: relative;
   display: block;
   background-color: transparent;

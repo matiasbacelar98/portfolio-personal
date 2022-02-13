@@ -1,5 +1,4 @@
 import { css } from 'styled-components';
-import { fluidValues } from './functions';
 import { respondTo } from './media';
 
 export const utilityClasses = css`
@@ -69,12 +68,16 @@ export const utilityClasses = css`
     margin-inline: auto;
   }
 
+  .max-width-1000 {
+    max-width: 62.5rem; // 1000px
+  }
+
   .max-width-800 {
-    max-width: 800px; // 50rem
+    max-width: 50rem; // 800px
   }
 
   .max-width-550 {
-    max-width: 550px; // 34.375rem
+    max-width: 34.375rem; // 550px
   }
 
   .center {
