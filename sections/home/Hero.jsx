@@ -34,26 +34,22 @@ const Hero = () => {
       </div>
 
       <StyledLinksWrapper className='links-area'>
-        <Link
-          href='https://www.linkedin.com/in/matias-bacelar-371140199/'
-          target='_blank'
-          rel='noopener noreferrer'
-          passHref
-        >
-          <StyledLink className='underline'>linkedin,</StyledLink>
+        <Link href='https://www.linkedin.com/in/matias-bacelar-371140199/' passHref>
+          <StyledLink target='_blank' rel='noopener noreferrer' className='underline'>
+            linkedin,
+          </StyledLink>
         </Link>
 
-        <Link
-          href='https://github.com/matiasbacelar98'
-          target='_blank'
-          rel='noopener noreferrer'
-          passHref
-        >
-          <StyledLink className='underline'>github,</StyledLink>
+        <Link href='https://github.com/matiasbacelar98' passHref>
+          <StyledLink target='_blank' rel='noopener noreferrer' className='underline'>
+            github,
+          </StyledLink>
         </Link>
 
-        <Link target='_blank' href='mailto:matiasbacelar@gmail.com' passHref>
-          <StyledLink className='underline'>email</StyledLink>
+        <Link href='mailto:matiasbacelar@gmail.com' passHref>
+          <StyledLink target='_blank' rel='noopener noreferrer' className='underline'>
+            email
+          </StyledLink>
         </Link>
       </StyledLinksWrapper>
     </StyledSection>

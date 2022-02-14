@@ -1,11 +1,10 @@
 import { useRef } from 'react';
 import PropTypes from 'prop-types';
-import Link from 'next/link';
 import { useClickOutside, useToggleScroll } from '@/hooks/index';
-import { StyledMobileLinks } from '@/styles/reusable/links';
 import { StyledContainer, StyledNav, StyledUl, StyledBgBlur } from './styles';
+import NavLinks from '../navlinks/NavLinks';
 
-const MobileMenu = ({ isMenuOpen, setIsMenuOpen, route, id }) => {
+const MobileMenu = ({ isMenuOpen, setIsMenuOpen, pathname }) => {
   const [setScrollbarAction] = useToggleScroll();
   const menuRef = useRef(null);
 
@@ -44,62 +43,12 @@ const MobileMenu = ({ isMenuOpen, setIsMenuOpen, route, id }) => {
       >
         <StyledNav>
           <StyledUl>
-            {route === '/' ? (
-              <>
-                <li>
-                  <Link href='/#hero' passHref>
-                    <StyledMobileLinks onClick={closeMenu}>Inicio</StyledMobileLinks>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href='/#sobremi' passHref>
-                    <StyledMobileLinks onClick={closeMenu}>Sobre mi</StyledMobileLinks>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href='/#proyectos' passHref>
-                    <StyledMobileLinks onClick={closeMenu}>Proyectos</StyledMobileLinks>
-                  </Link>
-                </li>
-              </>
-            ) : (
-              <>
-                <li>
-                  <Link href='/' passHref>
-                    <StyledMobileLinks onClick={() => setIsMenuOpen(false)}>
-                      Volver a Inicio
-                    </StyledMobileLinks>
-                  </Link>
-                </li>
-
-                <li>
-                  <Link href={`/proyectos/${id}#otros-proyectos`} passHref>
-                    <StyledMobileLinks onClick={closeMenu}>Otros Proyectos</StyledMobileLinks>
-                  </Link>
-                </li>
-              </>
-            )}
-
-            <li>
-              <Link href={`${route === '/' ? '/#contacto' : `/proyectos/${id}#contacto`}`} passHref>
-                <StyledMobileLinks onClick={closeMenu}>Contacto</StyledMobileLinks>
-              </Link>
-            </li>
-
-            {/* Download CV */}
-            <li className='border'>
-              <a
-                className='download-link'
-                target='_blank'
-                rel='noopener noreferrer'
-                href='/CV-Matias-Bacelar.pdf'
-                download
-              >
-                cv
-              </a>
-            </li>
+            <NavLinks
+              type='mobile'
+              pathname={pathname}
+              setIsMenuOpen={setIsMenuOpen}
+              closeMenu={closeMenu}
+            />
           </StyledUl>
         </StyledNav>
       </StyledContainer>
@@ -118,8 +67,7 @@ const MobileMenu = ({ isMenuOpen, setIsMenuOpen, route, id }) => {
 MobileMenu.propTypes = {
   isMenuOpen: PropTypes.bool.isRequired,
   setIsMenuOpen: PropTypes.func.isRequired,
-  route: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  pathname: PropTypes.string.isRequired,
 };
 
 export default MobileMenu;

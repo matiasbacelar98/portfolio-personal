@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-constructed-context-values */
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 // Context
@@ -11,9 +11,12 @@ export const useAnimationContext = () => useContext(AnimationContext);
 // Provider
 const AnimationProvider = ({ children }) => {
   const [isEntranceActive, setIsEntranceActive] = useState(true);
+  const isTransitionActive = useRef(false);
 
   return (
-    <AnimationContext.Provider value={{ isEntranceActive, setIsEntranceActive }}>
+    <AnimationContext.Provider
+      value={{ isEntranceActive, setIsEntranceActive, isTransitionActive }}
+    >
       {children}
     </AnimationContext.Provider>
   );

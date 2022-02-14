@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { respondTo } from '@/styles/helpers';
 
-const StyledBtn = styled.button`
+const StyledBtn = styled(motion.button)`
   display: grid;
   place-items: center;
   padding: 0;

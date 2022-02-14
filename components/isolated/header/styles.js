@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { respondTo } from '@/styles/helpers';
 
 const StyledHeader = styled.header`
@@ -15,7 +16,7 @@ const StyledNav = styled.nav`
   `}
 `;
 
-const StyledUl = styled.ul`
+const StyledUl = styled(motion.ul)`
   display: flex;
   align-items: center;
 

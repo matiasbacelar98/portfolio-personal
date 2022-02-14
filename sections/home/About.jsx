@@ -9,18 +9,25 @@ const About = () => {
   const [isDesktopWidth, setDesktopWidth] = useState(false);
   const desktopWidth = 1024;
   const technologies = {
-    rowOne: ['HTML', 'CSS', 'SCSS', 'Javascript', 'Strapi CMS', 'Git'],
+    rowOne: [
+      'HTML',
+      'CSS',
+      'SCSS',
+      'Javascript',
+      'Strapi CMS',
+      isDesktopWidth ? 'Tailwind CSS' : 'Tailwind',
+    ],
     rowTwo: [
       'React JS',
       'Next JS',
+      'Redux',
+      'GSAP',
       isDesktopWidth ? 'Framer Motion' : 'Framer M...',
-      'Firebase',
-      'VSCode',
       isDesktopWidth ? 'Styled Comp...' : 'Styled Co...',
     ],
     rowThree: [
-      ['Node JS', 'Express JS', 'Mongodb'],
-      ['Mysql', 'SQL', 'Figma'],
+      ['Graphql', isDesktopWidth ? 'Apollo Client' : 'Apollo C...', 'Git'],
+      ['Git Bash', 'VSCode', 'Figma'],
     ],
   };
 
