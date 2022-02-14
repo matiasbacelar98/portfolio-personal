@@ -26,7 +26,6 @@ export const variables = css`
     --clr-background: hsl(0, 0%, 100%);
     // Others
     --border-radius: 0.2rem;
-    --scrollbar-width: 0;
     --box-shadow: -2px 2px 15px -2px rgba(0, 0, 0, 0.3);
   }
 `;

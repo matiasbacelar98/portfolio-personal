@@ -15,7 +15,11 @@ const Proyect = ({ title, number, imgData }) => {
 
   return (
     <>
-      <Link href={isTitleTecnoshop ? `/#proyectos` : `/proyectos/${proyectNumber}`} passHref>
+      <Link
+        href={isTitleTecnoshop ? `/#proyectos` : `/proyectos/${proyectNumber}`}
+        scroll={false}
+        passHref
+      >
         <StyledWrapper
           onMouseEnter={() => setIsImageActive(true)}
           onMouseLeave={() => setIsImageActive(false)}
