@@ -10,7 +10,59 @@ const NavLinks = ({ type, pathname, controls, setIsMenuOpen, closeMenu }) => {
   const router = useRouter();
   const { id } = router.query;
 
-  if (type === 'mobile') {
+  // Error route - Mobile
+  if (type === 'mobile' && pathname === '/404') {
+    return (
+      <>
+        <li>
+          <Link href='/' passHref>
+            <StyledMobileLinks onClick={() => setIsMenuOpen(false)}>
+              Volver a Inicio
+            </StyledMobileLinks>
+          </Link>
+        </li>
+
+        <li className='border'>
+          <a
+            className='download-link'
+            target='_blank'
+            rel='noopener noreferrer'
+            href='/CV-Matias-Bacelar.pdf'
+            download
+          >
+            CV
+          </a>
+        </li>
+      </>
+    );
+  }
+
+  // Error route - Desktop
+  if (pathname === '/404') {
+    return (
+      <>
+        <motion.li initial={{ opacity: 0, y: -30 }} animate={controls} custom={0}>
+          <Link href='/' passHref>
+            <StyledAnchorLink className='fw-medium'>Volver a inicio</StyledAnchorLink>
+          </Link>
+        </motion.li>
+
+        <motion.li initial={{ opacity: 0, y: -30 }} animate={controls} custom={1}>
+          <StyledCustomLink
+            className='fw-medium'
+            href='/CV-Matias-Bacelar.pdf'
+            rel='noopener noreferrer'
+            download
+          >
+            CV
+          </StyledCustomLink>
+        </motion.li>
+      </>
+    );
+  }
+
+  // Home & Proyect - Mobile
+  if (type === 'mobile' && pathname !== '/404') {
     return (
       <>
         {pathname === '/' ? (
@@ -79,6 +131,7 @@ const NavLinks = ({ type, pathname, controls, setIsMenuOpen, closeMenu }) => {
     );
   }
 
+  // Home & Proyect - Desktop
   return (
     <>
       {pathname === '/' ? (
@@ -127,12 +180,18 @@ const NavLinks = ({ type, pathname, controls, setIsMenuOpen, closeMenu }) => {
           </motion.li>
 
           <motion.li initial={{ opacity: 0, y: -30 }} animate={controls} custom={1}>
+            <Link href={`/proyectos/${id}#otros-proyectos`} passHref>
+              <StyledAnchorLink className='fw-medium'>Otros proyectos</StyledAnchorLink>
+            </Link>
+          </motion.li>
+
+          <motion.li initial={{ opacity: 0, y: -30 }} animate={controls} custom={2}>
             <Link href={`/proyectos/${id}#contacto`} passHref>
               <StyledAnchorLink className='fw-medium'>Contacto</StyledAnchorLink>
             </Link>
           </motion.li>
 
-          <motion.li initial={{ opacity: 0, y: -30 }} animate={controls} custom={2}>
+          <motion.li initial={{ opacity: 0, y: -30 }} animate={controls} custom={3}>
             <StyledCustomLink
               className='fw-medium'
               href='/CV-Matias-Bacelar.pdf'
