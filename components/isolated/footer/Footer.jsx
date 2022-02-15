@@ -48,7 +48,7 @@ const Footer = ({ spacing }) => {
   return (
     <footer id='contacto' className={`wrapper footer-spacing-bottom ${spacing}`} ref={element}>
       <StyledTwoColumnGrid
-        initial={initialValuesAnim}
+        initial={pathname === '/404' ? false : initialValuesAnim}
         animate={controls}
         custom={0}
         className='flow-spacing-text rm-spacing-lg'
@@ -80,7 +80,11 @@ const Footer = ({ spacing }) => {
         </StyledIconsGrid>
       </StyledTwoColumnGrid>
 
-      <StyledLogoArticle initial={initialValuesAnim} animate={controls} custom={1}>
+      <StyledLogoArticle
+        initial={pathname === '/404' ? false : initialValuesAnim}
+        animate={controls}
+        custom={1}
+      >
         <Logo />
         <StyledButton onClick={toTop}>Volver arriba</StyledButton>
       </StyledLogoArticle>
