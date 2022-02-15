@@ -8,7 +8,7 @@ import Footer from '@/components-i/footer/Footer';
 import Entrance from '@/components-i/entrance/Entrance';
 import Transition from '@/components-i/transition/Transition';
 
-const Layout = ({ children, headData }) => {
+const Layout = ({ children, headData, route }) => {
   const { isEntranceActive } = useAnimationContext();
   const [setScrollbarAction] = useToggleScroll();
 
@@ -19,7 +19,7 @@ const Layout = ({ children, headData }) => {
         <meta name='description' content={headData.description} />
       </Head>
 
-      <Header spacing='header-spacing-top' />
+      <Header spacing='header-spacing-top' route={route} />
       {children}
       <Footer spacing='footer-spacing-top' />
 
@@ -41,6 +41,7 @@ Layout.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
   }).isRequired,
+  route: PropTypes.string.isRequired,
 };
 
 export default Layout;

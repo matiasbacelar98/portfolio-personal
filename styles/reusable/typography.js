@@ -2,13 +2,13 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { fluidValues } from '../helpers';
 
-const StyledH1 = styled.h1`
+const StyledH1 = styled(motion.h1)`
   font-family: var(--font-headings);
   font-size: var(--fs-1);
   font-weight: bold;
 `;
 
-const StyledH2 = styled.h2`
+const StyledH2 = styled(motion.h2)`
   font-family: var(--font-headings);
   font-size: ${props => (props.proyect ? 'var(--fs-3)' : 'var(--fs-2)')};
   font-weight: bold;
@@ -35,13 +35,6 @@ const StyledInfoHeading = styled.span`
   font-weight: bold;
 `;
 
-const StyledMobileLinks = styled.a`
-  font-size: 1.625rem; // 26px
-  line-height: var(--line-height-headings);
-  font-weight: bold;
-  color: var(--clr-background);
-`;
-
 const EntranceHeading = styled(motion.span)`
   display: block;
   font-size: ${fluidValues(280, 1200, 32, 56)};
@@ -62,7 +55,6 @@ export {
   StyledH3,
   StyledInfoHeading,
   StyledHeadingProyects,
-  StyledMobileLinks,
   EntranceHeading,
   StyledHighlight,
 };

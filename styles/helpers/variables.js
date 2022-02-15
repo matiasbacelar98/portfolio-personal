@@ -24,13 +24,8 @@ export const variables = css`
     --clr-primary: hsl(243, 100%, 65%);
     --clr-text: hsl(219, 17%, 16%);
     --clr-background: hsl(0, 0%, 100%);
-    --shadow-color: 0deg 0% 63%;
     // Others
     --border-radius: 0.2rem;
-    --scrollbar-width: 0;
-    --box-shadow: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
-      0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
-      2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
-      5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+    --box-shadow: -2px 2px 15px -2px rgba(0, 0, 0, 0.3);
   }
 `;

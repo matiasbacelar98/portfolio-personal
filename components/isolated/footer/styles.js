@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { fluidValues, respondTo } from '@/styles/helpers';
 
 const StyledButton = styled.button`
@@ -32,7 +33,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const StyledLogoArticle = styled.article`
+const StyledLogoArticle = styled(motion.article)`
   display: flex;
   align-items: center;
   justify-content: space-between;

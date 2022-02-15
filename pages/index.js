@@ -1,26 +1,40 @@
+import PropTypes from 'prop-types';
+import axios from 'axios';
 import Layout from '@/components-r/layout/Layout';
-import Link from 'next/link';
+import About from '@/sections/home/About';
+import Proyects from '@/sections/home/Proyects';
+import Hero from '@/sections/home/Hero';
 
-function Home() {
+function Home({ proyectsData }) {
   return (
-    <Layout headData={{ title: 'Inicio', description: 'Descripcion inicio' }}>
-      <main>
-        <Link href='/test'>ir a test route</Link>
-
-        <p id='hero' style={{ height: '100vh', backgroundColor: 'red' }}>
-          seccion home
-        </p>
-
-        <p id='sobremi' style={{ height: '100vh', backgroundColor: 'blue' }}>
-          seccion sobre mi
-        </p>
-
-        <p id='proyectos' style={{ height: '100vh', backgroundColor: 'orange' }}>
-          seccion proyectos
-        </p>
+    <Layout headData={{ title: 'Inicio', description: 'Descripcion inicio' }} route='/'>
+      <main className='wrapper flow-spacing-sections'>
+        <Hero />
+        <Proyects proyectsData={proyectsData} />
+        <About />
       </main>
     </Layout>
   );
+}
+
+// Proptypes
+Home.propTypes = {
+  proyectsData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      attributes: PropTypes.shape({}).isRequired,
+    })
+  ).isRequired,
+};
+
+// Fetching Methods
+export async function getStaticProps() {
+  const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}hover-images?populate=img
+  `);
+
+  return {
+    props: { proyectsData: response.data.data },
+  };
 }
 
 export default Home;

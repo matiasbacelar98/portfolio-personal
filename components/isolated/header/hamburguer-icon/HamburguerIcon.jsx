@@ -1,9 +1,11 @@
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
+import { useAnimationContext } from '@/context/animationContext';
 import { useToggleScroll } from '@/hooks/index';
 import { StyledBtn } from './styles';
 
 const HamburguerIcon = ({ isMenuOpen, setIsMenuOpen }) => {
+  const { isTransitionActive } = useAnimationContext();
   const [setScrollbarAction] = useToggleScroll();
 
   const toggleMenu = () => {
@@ -16,6 +18,16 @@ const HamburguerIcon = ({ isMenuOpen, setIsMenuOpen }) => {
       type='button'
       aria-label={isMenuOpen ? 'Cerrar menu' : 'Abrir menu'}
       onClick={toggleMenu}
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: {
+          type: 'tween',
+          ease: 'easeOut',
+          duration: 0.5,
+          delay: !isTransitionActive.current ? 7 : 1.5,
+        },
+      }}
     >
       <svg
         width='40'

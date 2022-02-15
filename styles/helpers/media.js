@@ -7,6 +7,7 @@ export const breakpoints = {
   lg: '59.375em', // 950px
   xl: '64rem', // 1024px
   xxl: '75em', // 1200px
+  xxxl: '87.5em', // 1400px
 };
 
 // Media Queries FC

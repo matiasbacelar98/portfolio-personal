@@ -1,5 +1,4 @@
 import { css } from 'styled-components';
-import { fluidValues } from './functions';
 import { respondTo } from './media';
 
 export const utilityClasses = css`
@@ -18,6 +17,10 @@ export const utilityClasses = css`
 
   .flow-spacing-fix > * + * {
     margin-top: var(--fix-spacing-2);
+  }
+
+  .main-spacing-top {
+    margin-top: var(--spacing-section);
   }
 
   .header-spacing-top {
@@ -59,32 +62,22 @@ export const utilityClasses = css`
     text-decoration: underline;
   }
 
-  .active-link-section {
-    font-size: ${fluidValues(768, 1200, 18, 20)};
-    transition: color 0.3s ease;
-
-    &:hover {
-      cursor: pointer;
-      color: var(--clr-primary);
-    }
-
-    &:focus {
-      color: var(--clr-primary);
-    }
-  }
-
   //--------- Layout ---------//
   .wrapper {
     width: min(90%, 100rem); // 100rem = 1600px
     margin-inline: auto;
   }
 
+  .max-width-1000 {
+    max-width: 62.5rem; // 1000px
+  }
+
   .max-width-800 {
-    max-width: 800px; // 50rem
+    max-width: 50rem; // 800px
   }
 
   .max-width-550 {
-    max-width: 550px; // 34.375rem
+    max-width: 34.375rem; // 550px
   }
 
   .center {
@@ -100,5 +93,10 @@ export const utilityClasses = css`
 
   .box-shadow {
     box-shadow: var(--box-shadow);
+  }
+
+  .inherit-dimensions {
+    width: inherit;
+    height: inherit;
   }
 `;
