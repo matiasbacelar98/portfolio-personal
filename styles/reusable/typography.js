@@ -8,7 +8,7 @@ const StyledH1 = styled(motion.h1)`
   font-weight: bold;
 `;
 
-const StyledH2 = styled.h2`
+const StyledH2 = styled(motion.h2)`
   font-family: var(--font-headings);
   font-size: ${props => (props.proyect ? 'var(--fs-3)' : 'var(--fs-2)')};
   font-weight: bold;
