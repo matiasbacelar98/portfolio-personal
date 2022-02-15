@@ -1,13 +1,19 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
+import { useAnimation } from 'framer-motion';
 import { StyledTwoColumnGrid } from '@/styles/reusable/twoColumnGrid';
 import { StyledH2 } from '@/typography';
-import { useIsomorphicLayoutEffect } from '@/hooks/index';
+import { useIsomorphicLayoutEffect, useAnimateOnScroll } from '@/hooks/index';
 import { fluidValues, respondTo } from '@/styles/helpers';
 
 const About = () => {
   const [isDesktopWidth, setDesktopWidth] = useState(false);
+  const controls = useAnimation();
+  const initialValuesAnimation = {
+    opacity: 0,
+    y: 60,
+  };
   const desktopWidth = 1024;
   const technologies = {
     rowOne: [
@@ -32,16 +38,39 @@ const About = () => {
     ],
   };
 
+  const animateAboutSection = async () => {
+    controls.start(i => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'tween',
+        ease: 'easeOut',
+        duration: 0.5,
+        delay: i * 0.2,
+      },
+    }));
+  };
+
+  // Animate on scroll
+  const { element } = useAnimateOnScroll(animateAboutSection, 0.19, true);
+
   // check window size
   useIsomorphicLayoutEffect(() => {
     window.innerWidth > desktopWidth ? setDesktopWidth(true) : false;
   }, []);
 
   return (
-    <section id='sobremi' className='flow-spacing-headings'>
-      <StyledH2>Sobre mi</StyledH2>
+    <section id='sobremi' className='flow-spacing-headings' ref={element}>
+      <StyledH2 initial={initialValuesAnimation} animate={controls} custom={0}>
+        Sobre mi
+      </StyledH2>
 
-      <StyledTwoColumnGrid className='flow-spacing-text rm-spacing-lg'>
+      <StyledTwoColumnGrid
+        initial={initialValuesAnimation}
+        animate={controls}
+        custom={1}
+        className='flow-spacing-text rm-spacing-lg'
+      >
         <div className='flow-spacing-text'>
           <p className='max-width-550'>
             Programar es un hobby que tengo desde hace un tiempo , no me acuerdo exactamente pero

@@ -6,29 +6,21 @@ import { StyledH2 } from '@/typography';
 import Proyect from '@/components-i/proyect/Proyect';
 
 const Proyects = ({ proyectsData }) => {
-  const controls = { title: useAnimation(), proyects: useAnimation() };
+  const controls = useAnimation();
+  const initialAnimationValues = {
+    opacity: 0,
+    y: 60,
+  };
 
   const animateProyectsSection = async () => {
-    const { title, proyects } = controls;
-
-    await title.start({
-      y: 0,
-      transition: {
-        type: 'tween',
-        ease: 'circOut',
-        duration: 0.4,
-        delay: 0.2,
-      },
-    });
-
-    proyects.start(i => ({
+    controls.start(i => ({
       y: 0,
       opacity: 1,
       transition: {
         type: 'tween',
-        ease: 'circOut',
+        ease: 'easeOut',
         duration: 0.5,
-        delay: i * 0.15,
+        delay: i * 0.2,
       },
     }));
   };
@@ -38,13 +30,11 @@ const Proyects = ({ proyectsData }) => {
 
   return (
     <section id='proyectos' className='flow-spacing-headings' ref={element}>
-      <motion.div initial={{ overflow: 'hidden' }}>
-        <StyledH2 initial={{ y: 60 }} animate={controls.title}>
-          Proyectos
-        </StyledH2>
-      </motion.div>
+      <StyledH2 initial={initialAnimationValues} animate={controls} custom={0}>
+        Proyectos
+      </StyledH2>
 
-      <div>
+      <motion.div initial={initialAnimationValues} animate={controls} custom={1}>
         {proyectsData.map((proyect, index) => {
           const { title } = proyect.attributes;
           const { url, alternativeText } = proyect.attributes.img.data.attributes;
@@ -55,11 +45,10 @@ const Proyects = ({ proyectsData }) => {
               number={index}
               title={title}
               imgData={{ url, alternativeText }}
-              controls={controls.proyects}
             />
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 };

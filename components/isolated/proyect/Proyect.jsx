@@ -2,19 +2,19 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { StyledHeadingProyects } from '@/typography';
 import { formatTitle, formatImageUrl } from '@/utils/utilities';
 import { StyledWrapper, StyledNameWrapper, ImageWrapper, StyledSpan, StyledLine } from './styles';
 
-const Proyect = ({ title, number, imgData, controls }) => {
+const Proyect = ({ title, number, imgData }) => {
   const [isImageActive, setIsImageActive] = useState(false);
   const { url, alternativeText } = imgData;
   const proyectNumber = number + 1;
   const isTitleTecnoshop = title === 'tecnoshop';
 
   return (
-    <motion.div initial={{ y: 100, opacity: 0 }} animate={controls} custom={number}>
+    <>
       <Link
         href={isTitleTecnoshop ? `/#proyectos` : `/proyectos/${proyectNumber}`}
         scroll={false}
@@ -76,7 +76,7 @@ const Proyect = ({ title, number, imgData, controls }) => {
       </Link>
 
       {isTitleTecnoshop ? <StyledLine /> : null}
-    </motion.div>
+    </>
   );
 };
 
@@ -88,7 +88,6 @@ Proyect.propTypes = {
     url: PropTypes.string.isRequired,
     alternativeText: PropTypes.string.isRequired,
   }).isRequired,
-  controls: PropTypes.shape({}).isRequired,
 };
 
 export default Proyect;
