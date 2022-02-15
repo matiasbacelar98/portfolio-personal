@@ -8,6 +8,7 @@ import GlobalStyles from '@/styles/globalStyles';
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
+  // Scroll to top after route change
   useEffect(() => {
     const scrollToTop = () => {
       setTimeout(() => {

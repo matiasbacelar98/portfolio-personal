@@ -1,12 +1,15 @@
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styled from 'styled-components';
 
 /* eslint-disable  @next/next/no-img-element */
 
 const Logo = () => {
+  const { pathname } = useRouter();
+
   return (
     <StyledImgWrapper>
-      <Link href='/' passHref>
+      <Link href='/' passHref scroll={pathname === '/'}>
         <StyledLink className='inherit-dimensions'>
           <img className='inherit-dimensions' src='/logo.svg' alt='logo' />
         </StyledLink>
