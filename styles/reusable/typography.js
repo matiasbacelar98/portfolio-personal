@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { fluidValues } from '../helpers';
 
-const StyledH1 = styled.h1`
+const StyledH1 = styled(motion.h1)`
   font-family: var(--font-headings);
   font-size: var(--fs-1);
   font-weight: bold;

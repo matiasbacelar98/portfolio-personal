@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import { StyledTwoColumnGrid } from '@/styles/reusable/twoColumnGrid';
 import { StyledH2 } from '@/typography';
+import { useIsomorphicLayoutEffect } from '@/hooks/index';
 import { fluidValues, respondTo } from '@/styles/helpers';
 
 const About = () => {
@@ -32,10 +33,8 @@ const About = () => {
   };
 
   // check window size
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.innerWidth > desktopWidth ? setDesktopWidth(true) : false;
-    }
+  useIsomorphicLayoutEffect(() => {
+    window.innerWidth > desktopWidth ? setDesktopWidth(true) : false;
   }, []);
 
   return (
