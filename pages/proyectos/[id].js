@@ -14,8 +14,7 @@ const Proyect = ({ proyectData }) => {
     intro,
     info,
     mainImage,
-    // content,
-    // icons,
+    content,
     // previews,
     // otherProyectsContent,
     // otherProyectsImages,
@@ -34,7 +33,7 @@ const Proyect = ({ proyectData }) => {
       <main className='main-spacing-top flow-spacing-sections'>
         <Hero title={title} intro={intro} info={info} />
         <ProyectImage mainImage={mainImage} />
-        <Content />
+        <Content contentData={content} title={title} />
         <Previews />
         <OtherProyects />
       </main>
