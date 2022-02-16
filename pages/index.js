@@ -7,7 +7,14 @@ import Hero from '@/sections/home/Hero';
 
 function Home({ proyectsData }) {
   return (
-    <Layout headData={{ title: 'Inicio', description: 'Descripcion inicio' }} route='/'>
+    <Layout
+      headData={{
+        title: 'Matias Bacelar',
+        description:
+          'Soy un Frontend Developer autodidacta de La Plata (Buenos Aires) con foco en Javascript & React. Tengo un interés por las micro interacciones y efectos en la UI como también en crear experiencias de usuario que sean dinámicas e interactivas.',
+      }}
+      route='/'
+    >
       <main className='wrapper flow-spacing-sections'>
         <Hero />
         <Proyects proyectsData={proyectsData} />

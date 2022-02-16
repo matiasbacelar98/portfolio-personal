@@ -41,6 +41,12 @@ export const utilityClasses = css`
     `}
   }
 
+  .rm-spacing-md > * + * {
+    ${respondTo.md`
+      margin-top: 0;
+    `}
+  }
+
   //--------- Typography ---------//
   .clr-primary {
     color: var(--clr-primary);
