@@ -105,4 +105,10 @@ export const utilityClasses = css`
     width: inherit;
     height: inherit;
   }
+
+  .img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
 `;

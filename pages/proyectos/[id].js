@@ -5,13 +5,15 @@ import Hero from '@/sections/proyects/Hero';
 import Content from '@/sections/proyects/Content';
 import Previews from '@/sections/proyects/Previews';
 import OtherProyects from '@/sections/proyects/OtherProyects';
+import ProyectImage from '@/sections/proyects/ProyectImage';
+import { formatTitle } from '@/utils/utilities';
 
 const Proyect = ({ proyectData }) => {
   const {
     title,
     intro,
     info,
-    // mainImage,
+    mainImage,
     // content,
     // icons,
     // previews,
@@ -24,13 +26,14 @@ const Proyect = ({ proyectData }) => {
   return (
     <Layout
       headData={{
-        title: `Proyecto ${title}`,
+        title: `Proyecto ${formatTitle(title)}`,
         description: `${intro}`,
       }}
       route='/proyectos'
     >
-      <main className='wrapper main-spacing-top flow-spacing-sections'>
+      <main className='main-spacing-top flow-spacing-sections'>
         <Hero title={title} intro={intro} info={info} />
+        <ProyectImage mainImage={mainImage} />
         <Content />
         <Previews />
         <OtherProyects />

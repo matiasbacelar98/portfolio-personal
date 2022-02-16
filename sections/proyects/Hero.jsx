@@ -12,7 +12,7 @@ const Hero = ({ title, intro, info }) => {
   const { type, codeUrl, liveSiteUrl, technologies } = info;
 
   return (
-    <section className='flow-spacing-text'>
+    <section className='wrapper flow-spacing-text'>
       <StyledH1 className='max-width-550'>
         Proyecto <span className='clr-primary'>{formatTitle(title)}</span>
       </StyledH1>

@@ -1,5 +1,5 @@
 const OtherProyects = () => {
-  return <div>other proyects...</div>;
+  return <section className='wrapper'>other proyects...</section>;
 };
 
 export default OtherProyects;
