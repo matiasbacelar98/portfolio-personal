@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
-import { useAnimation } from 'framer-motion';
 import { StyledTwoColumnGrid } from '@/styles/reusable/twoColumnGrid';
 import { useAnimateOnScroll } from '@/hooks/index';
 import { StyledH2 } from '@/typography';
@@ -15,8 +14,8 @@ import { StyledButton, StyledLogoArticle, StyledContentWrapper, StyledIconsGrid 
 const Footer = ({ spacing }) => {
   const { pathname, push, query } = useRouter();
   const homePathname = '/';
-  const initialValuesAnim = { opacity: 0, y: 60 };
-  const controls = useAnimation();
+  // Execute anim when element is in view
+  const [element, controls, initialAnimValues] = useAnimateOnScroll(0.19, 0.3);
 
   const toTop = () => {
     // Clear url
@@ -29,26 +28,10 @@ const Footer = ({ spacing }) => {
     window.scrollTo(0, 0);
   };
 
-  const animateFooter = async () => {
-    controls.start(i => ({
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'tween',
-        ease: 'easeOut',
-        duration: 0.3,
-        delay: i * 0.2,
-      },
-    }));
-  };
-
-  // Animate on scroll
-  const { element } = useAnimateOnScroll(animateFooter, 0.19, true);
-
   return (
     <footer id='contacto' className={`wrapper footer-spacing-bottom ${spacing}`} ref={element}>
       <StyledTwoColumnGrid
-        initial={pathname === '/404' ? false : initialValuesAnim}
+        initial={pathname === '/404' ? false : initialAnimValues}
         animate={controls}
         custom={0}
         className='flow-spacing-text rm-spacing-lg'
@@ -81,7 +64,7 @@ const Footer = ({ spacing }) => {
       </StyledTwoColumnGrid>
 
       <StyledLogoArticle
-        initial={pathname === '/404' ? false : initialValuesAnim}
+        initial={pathname === '/404' ? false : initialAnimValues}
         animate={controls}
         custom={1}
       >
