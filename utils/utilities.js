@@ -18,4 +18,10 @@ const formatImageUrl = str => {
   return str.replace('https://res.cloudinary.com/mb-dev-98/image/upload/', '');
 };
 
-export { activateScroll, removeScroll, formatTitle, formatImageUrl };
+// Calculate value for img padding hack
+const calculatePaddingTop = (height, width) => {
+  const calculatedValue = height / (width / 100);
+  return calculatedValue;
+};
+
+export { activateScroll, removeScroll, formatTitle, formatImageUrl, calculatePaddingTop };

@@ -3,7 +3,6 @@ import axios from 'axios';
 import Layout from 'components/reusable/layout/Layout';
 import Hero from '@/sections/proyects/Hero';
 import Content from '@/sections/proyects/Content';
-import Previews from '@/sections/proyects/Previews';
 import OtherProyects from '@/sections/proyects/OtherProyects';
 import ProyectImage from '@/sections/proyects/ProyectImage';
 import { formatTitle } from '@/utils/utilities';
@@ -15,7 +14,7 @@ const Proyect = ({ proyectData }) => {
     info,
     mainImage,
     content,
-    // previews,
+    previews,
     // otherProyectsContent,
     // otherProyectsImages,
   } = proyectData;
@@ -32,9 +31,9 @@ const Proyect = ({ proyectData }) => {
     >
       <main className='main-spacing-top flow-spacing-sections'>
         <Hero title={title} intro={intro} info={info} />
-        <ProyectImage mainImage={mainImage} />
+        <ProyectImage image={mainImage} isFullWidth={false} />
         <Content contentData={content} title={title} />
-        <Previews />
+        <ProyectImage image={previews} isFullWidth />
         <OtherProyects />
       </main>
     </Layout>
@@ -45,7 +44,6 @@ const Proyect = ({ proyectData }) => {
 Proyect.propTypes = {
   proyectData: PropTypes.shape({
     content: PropTypes.shape({}).isRequired,
-    icons: PropTypes.shape({}).isRequired,
     info: PropTypes.shape({}).isRequired,
     intro: PropTypes.string.isRequired,
     mainImage: PropTypes.shape({}).isRequired,

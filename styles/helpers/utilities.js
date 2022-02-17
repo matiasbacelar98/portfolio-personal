@@ -35,14 +35,20 @@ export const utilityClasses = css`
     margin-bottom: var(--fix-spacing-1);
   }
 
+  .rm-spacing-md > * + * {
+    ${respondTo.md`
+      margin-top: 0;
+    `}
+  }
+
   .rm-spacing-lg > * + * {
     ${respondTo.lg`
       margin-top: 0;
     `}
   }
 
-  .rm-spacing-md > * + * {
-    ${respondTo.md`
+  .rm-spacing-xl > * + * {
+    ${respondTo.xl`
       margin-top: 0;
     `}
   }
@@ -110,5 +116,9 @@ export const utilityClasses = css`
     position: relative;
     width: 100%;
     height: 100%;
+  }
+
+  .box-shadow {
+    box-shadow: var(--box-shadow);
   }
 `;
