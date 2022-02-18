@@ -15,11 +15,9 @@ const Proyect = ({ proyectData }) => {
     mainImage,
     content,
     previews,
-    // otherProyectsContent,
-    // otherProyectsImages,
+    otherProyectsContent,
+    otherProyectsImages,
   } = proyectData;
-
-  // console.log(proyectData);
 
   return (
     <Layout
@@ -31,10 +29,10 @@ const Proyect = ({ proyectData }) => {
     >
       <main className='main-spacing-top flow-spacing-sections'>
         <Hero title={title} intro={intro} info={info} />
-        <ProyectImage image={mainImage} isFullWidth={false} />
+        <ProyectImage image={mainImage} isFullWidth={false} boxShadow />
         <Content contentData={content} title={title} />
-        <ProyectImage image={previews} isFullWidth />
-        <OtherProyects />
+        <ProyectImage image={previews} isFullWidth boxShadow={false} />
+        <OtherProyects content={otherProyectsContent} images={otherProyectsImages} />
       </main>
     </Layout>
   );

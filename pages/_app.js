@@ -33,7 +33,7 @@ function MyApp({ Component, pageProps }) {
         <GlobalStyles />
 
         <AnimatePresence exitBeforeEnter>
-          <Component {...pageProps} key={router.route} />
+          <Component {...pageProps} key={router.asPath} />
         </AnimatePresence>
       </>
     </AnimationProvider>

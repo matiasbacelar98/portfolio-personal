@@ -17,7 +17,7 @@ const StyledH2 = styled(motion.h2)`
 
 const StyledH3 = styled.h3`
   font-family: var(--font-headings);
-  font-size: var(--fs-3);
+  font-size: var(--fs-4);
   font-weight: bold;
 `;
 

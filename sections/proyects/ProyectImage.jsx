@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { formatImageUrl, calculatePaddingTop } from '@/utils/utilities';
 
-const ProyectImage = ({ image, isFullWidth }) => {
+const ProyectImage = ({ image, isFullWidth, boxShadow }) => {
   const { alternativeText, url, width, height } = image.data.attributes;
 
   return (
     <section className={isFullWidth === true ? 'wrapper' : ''}>
       <StyledWrapper paddingTopVal={calculatePaddingTop(height, width)}>
-        <StyledImgWrapper>
+        <StyledImgWrapper className={boxShadow === true ? 'box-shadow' : ''}>
           <div className='img-container'>
             <Image
               src={formatImageUrl(url)}
@@ -52,6 +52,7 @@ ProyectImage.propTypes = {
     }).isRequired,
   }).isRequired,
   isFullWidth: PropTypes.bool.isRequired,
+  boxShadow: PropTypes.bool.isRequired,
 };
 
 export default ProyectImage;
