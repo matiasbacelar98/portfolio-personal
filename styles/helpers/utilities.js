@@ -35,8 +35,21 @@ export const utilityClasses = css`
     margin-bottom: var(--fix-spacing-1);
   }
 
+  // Remove Spacing
+  .rm-spacing-md > * + * {
+    ${respondTo.md`
+      margin-top: 0;
+    `}
+  }
+
   .rm-spacing-lg > * + * {
     ${respondTo.lg`
+      margin-top: 0;
+    `}
+  }
+
+  .rm-spacing-xl > * + * {
+    ${respondTo.xl`
       margin-top: 0;
     `}
   }
@@ -98,5 +111,15 @@ export const utilityClasses = css`
   .inherit-dimensions {
     width: inherit;
     height: inherit;
+  }
+
+  .img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .box-shadow {
+    box-shadow: var(--box-shadow);
   }
 `;

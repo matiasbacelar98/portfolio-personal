@@ -10,14 +10,14 @@ const StyledH1 = styled(motion.h1)`
 
 const StyledH2 = styled(motion.h2)`
   font-family: var(--font-headings);
-  font-size: ${props => (props.proyect ? 'var(--fs-3)' : 'var(--fs-2)')};
+  font-size: ${props => (props.proyect === 'true' ? 'var(--fs-3)' : 'var(--fs-2)')};
   font-weight: bold;
-  color: ${props => (props.proyect ? 'var(--clr-text)' : 'var(--clr-primary)')}; ;
+  color: ${props => (props.proyect === 'true' ? 'var(--clr-text)' : 'var(--clr-primary)')}; ;
 `;
 
 const StyledH3 = styled.h3`
   font-family: var(--font-headings);
-  font-size: var(--fs-3);
+  font-size: var(--fs-4);
   font-weight: bold;
 `;
 

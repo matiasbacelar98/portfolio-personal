@@ -8,6 +8,25 @@ import GlobalStyles from '@/styles/globalStyles';
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
+  // This function prevents the asPath prop from reloading the path
+  // when an anchor link is clicked
+  const renderKeyWithoutUnnecessaryReloads = () => {
+    const isProyectRoute = '/proyectos';
+    const isErrorRoute = '/404';
+
+    // Error
+    if (router.pathname === isErrorRoute) {
+      return router.asPath;
+    }
+
+    // Proyect or Home
+    if (router.asPath.includes(isProyectRoute)) {
+      return `/proyectos/${router.query.id}`;
+    } else {
+      return `/`;
+    }
+  };
+
   // Scroll to top after route change
   useEffect(() => {
     const scrollToTop = () => {
@@ -33,7 +52,7 @@ function MyApp({ Component, pageProps }) {
         <GlobalStyles />
 
         <AnimatePresence exitBeforeEnter>
-          <Component {...pageProps} key={router.route} />
+          <Component {...pageProps} key={renderKeyWithoutUnnecessaryReloads()} />
         </AnimatePresence>
       </>
     </AnimationProvider>

@@ -37,12 +37,6 @@ const ImageWrapper = styled(motion.div)`
     height: 28.125rem; // 450px
     box-shadow: var(--box-shadow);
   `}
-
-  .img-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
 `;
 
 const StyledSpan = styled.span`
