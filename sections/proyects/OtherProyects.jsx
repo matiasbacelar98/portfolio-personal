@@ -1,15 +1,25 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
 import ArrowLink from '@/components-r/arrowLink/ArrowLink';
 import { StyledH2, StyledH3 } from '@/typography';
 import { formatTitle, formatImageUrl } from '@/utils/utilities';
+import { useAnimateOnScroll } from '@/hooks/index';
 import { respondTo } from '@/styles/helpers';
 
 const OtherProyects = ({ content, images }) => {
+  const [element, controls, initialAnimValues] = useAnimateOnScroll(0.1, 0.5);
+
   return (
-    <StyledSection className='wrapper flow-spacing-text' id='otros-proyectos'>
+    <StyledSection
+      ref={element}
+      initial={initialAnimValues}
+      animate={controls}
+      className='wrapper flow-spacing-text'
+      id='otros-proyectos'
+    >
       <StyledH2 proyect='true' className='title-area'>
         Otros Proyectos
       </StyledH2>
@@ -18,9 +28,15 @@ const OtherProyects = ({ content, images }) => {
         const { alternativeText, url, width, height } = images.data[index].attributes;
         const { title, content, path } = proy;
         const pathStr = path.toString();
+        const formatIndex = index + 1;
+        const cardAreaClass = `card${formatIndex}-area`;
 
         return (
-          <div key={uuidv4()} className={`card${index + 1}-area flow-spacing-text`}>
+          <StyledCard
+            key={uuidv4()}
+            addMarginBottom={formatIndex === 1 ? 'true' : 'false'}
+            className={`${cardAreaClass} flow-spacing-text`}
+          >
             <div className='box-shadow'>
               <div className='img-container'>
                 <Image
@@ -38,7 +54,7 @@ const OtherProyects = ({ content, images }) => {
               <p className='max-width-550'>{content}</p>
               <ArrowLink to={`/proyectos/${pathStr}`} text='Ver proyecto' />
             </StyledContentWrapper>
-          </div>
+          </StyledCard>
         );
       })}
     </StyledSection>
@@ -46,7 +62,7 @@ const OtherProyects = ({ content, images }) => {
 };
 
 // Styles
-const StyledSection = styled.section`
+const StyledSection = styled(motion.section)`
   ${respondTo.lg`
     display: grid;
     grid-template-columns: repeat(2 , 1fr);
@@ -63,6 +79,14 @@ const StyledSection = styled.section`
     .card2-area {
       grid-area: card-two;
     }   
+  `}
+`;
+
+const StyledCard = styled.div`
+  ${props => (props.addMarginBottom === 'true' ? 'margin-bottom: var(--fix-spacing-1);' : null)};
+
+  ${respondTo.lg`
+    ${props => (props.addMarginBottom === 'true' ? 'margin-bottom: 0;' : null)}
   `}
 `;
 

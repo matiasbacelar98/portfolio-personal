@@ -2,10 +2,15 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 import { StyledH2 } from '@/typography';
+import { motion } from 'framer-motion';
+import { useAnimateOnScroll } from '@/hooks/index';
 import { respondTo, fluidValues } from '@/styles/helpers';
 
 const Content = ({ contentData, title }) => {
   const { explanation, objectives, problems } = contentData;
+  const [sectionOne, controls, initialAnimValuesOne] = useAnimateOnScroll(0.1, 0.5);
+  const [sectionTwo, controlsTwo, initialAnimValuesTwo] = useAnimateOnScroll(0.1, 0.5);
+  const [sectionThree, controlsThree, initialAnimValuesThree] = useAnimateOnScroll(0.1, 0.5);
   const techIcons = [
     {
       title: 'snapcode',
@@ -36,7 +41,12 @@ const Content = ({ contentData, title }) => {
 
   return (
     <>
-      <section className='wrapper flow-spacing-text'>
+      <motion.section
+        ref={sectionOne}
+        initial={initialAnimValuesOne}
+        animate={controls}
+        className='wrapper flow-spacing-text'
+      >
         <StyledH2 proyect='true'>Objetivos & Meta</StyledH2>
 
         {/* Parragrahps */}
@@ -45,9 +55,14 @@ const Content = ({ contentData, title }) => {
             {parragraph}
           </p>
         ))}
-      </section>
+      </motion.section>
 
-      <StyledExplanationSection className='wrapper flow-spacing-text'>
+      <StyledExplanationSection
+        ref={sectionTwo}
+        initial={initialAnimValuesTwo}
+        animate={controlsTwo}
+        className='wrapper flow-spacing-text'
+      >
         <StyledH2 proyect='true' className='title-area'>
           Stack y Explicación
         </StyledH2>
@@ -73,7 +88,12 @@ const Content = ({ contentData, title }) => {
         </div>
       </StyledExplanationSection>
 
-      <StyledProblemsSection className='wrapper flow-spacing-text'>
+      <StyledProblemsSection
+        ref={sectionThree}
+        initial={initialAnimValuesThree}
+        animate={controlsThree}
+        className='wrapper flow-spacing-text'
+      >
         <StyledH2 proyect='true'>Problemas & Soluciones</StyledH2>
 
         {/* Parragrahps */}
@@ -88,7 +108,7 @@ const Content = ({ contentData, title }) => {
 };
 
 // Styles
-const StyledProblemsSection = styled.section`
+const StyledProblemsSection = styled(motion.section)`
   ${respondTo.lg`
       display: grid;
       place-items: center;
@@ -96,7 +116,7 @@ const StyledProblemsSection = styled.section`
   `}
 `;
 
-const StyledExplanationSection = styled.section`
+const StyledExplanationSection = styled(motion.section)`
   ${respondTo.lg`
     display: grid;
     grid-template-columns: repeat(2 , 1fr);

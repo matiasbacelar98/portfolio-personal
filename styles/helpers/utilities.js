@@ -35,6 +35,7 @@ export const utilityClasses = css`
     margin-bottom: var(--fix-spacing-1);
   }
 
+  // Remove Spacing
   .rm-spacing-md > * + * {
     ${respondTo.md`
       margin-top: 0;

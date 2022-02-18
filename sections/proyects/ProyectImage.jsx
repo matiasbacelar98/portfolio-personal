@@ -1,14 +1,22 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { useAnimateOnScroll } from '@/hooks/index';
 import { formatImageUrl, calculatePaddingTop } from '@/utils/utilities';
 
 const ProyectImage = ({ image, isFullWidth, boxShadow }) => {
   const { alternativeText, url, width, height } = image.data.attributes;
+  const [element, controls, initialAnimValues] = useAnimateOnScroll(0.1, 0.5);
 
   return (
     <section className={isFullWidth === true ? 'wrapper' : ''}>
-      <StyledWrapper paddingTopVal={calculatePaddingTop(height, width)}>
+      <StyledWrapper
+        ref={element}
+        initial={initialAnimValues}
+        animate={controls}
+        paddingtopval={calculatePaddingTop(height, width)}
+      >
         <StyledImgWrapper className={boxShadow === true ? 'box-shadow' : ''}>
           <div className='img-container'>
             <Image
@@ -25,11 +33,11 @@ const ProyectImage = ({ image, isFullWidth, boxShadow }) => {
 };
 
 // Styles
-const StyledWrapper = styled.section`
+const StyledWrapper = styled(motion.div)`
   position: relative;
   width: 100%;
   height: 0;
-  padding-top: ${props => `${props.paddingTopVal}%`};
+  padding-top: ${props => `${props.paddingtopval}%`};
 `;
 
 const StyledImgWrapper = styled.div`
