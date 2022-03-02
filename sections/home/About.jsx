@@ -27,8 +27,8 @@ const About = () => {
       isDesktopWidth ? 'Styled Comp...' : 'Styled Co...',
     ],
     rowThree: [
-      ['Graphql', isDesktopWidth ? 'Apollo Client' : 'Apollo C...', 'Git'],
-      ['Git Bash', 'VSCode', 'Figma'],
+      ['Node JS', 'Express JS', 'Graphql'],
+      [isDesktopWidth ? 'Apollo Client' : 'Apollo C...', 'Git', 'Figma'],
     ],
   };
 
