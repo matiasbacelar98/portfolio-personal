@@ -1,32 +1,32 @@
 # Portfolio Personal
 
-> Sitio web portfolio personal - Matias Bacelar
+> Personal Portfolio - Matias Bacelar
 
 </br>
 
 ## Scripts
 
-En el directorio del proyecto, puede ejecutar:
+In the project directory, you can run:
 
 ### `npm run dev`
 
-Para ejecutar la aplicacion en modo desarrollo.\
-Abrir [http://localhost:3000](http://localhost:3000) para ver la aplicacion en el navegador.
+To run the application in development mode.\
+Open [http://localhost:3000](http://localhost:3000) to see the application in the browser.
 
-La pagina se va a recargar cuando ocurran cambios.\
-Tambien se van a mostrar errores en la consola.
+The page will reload when changes occur.\
+Errors will also be displayed on the console.
 
 ### `npm run build`
 
-Next export le permite exportar su aplicación Next.js a HTML estático, que se puede ejecutar de forma independiente sin necesidad de un servidor Node.js. Para esto el script de npm run build esta utilizando "next build && next export".
+Next export allows you to export your Next.js application to static HTML, which can be run independently without the need for a Node.js server. For this the npm run build script is using "next build && next export".
 
 </br>
 
-## Tabla de contenidos
+## Contents
 
 - [Screenshots](#screenshots)
-- [Tecnologias](#tecnologias)
-- [Contacto](#contacto)
+- [Technologies](#technologies)
+- [Contact](#contact)
 
 </br>
 
@@ -48,7 +48,7 @@ Next export le permite exportar su aplicación Next.js a HTML estático, que se 
 
 </br>
 
-## Tecnologias
+## Technologies
 
 - React JS
 - Next JS
@@ -62,6 +62,6 @@ Next export le permite exportar su aplicación Next.js a HTML estático, que se 
 
 </br>
 
-## Contacto
+## Contact
 
-Creado y diseñado por [@matiasbacelar](https://github.com/matiasbacelar98)
+Created and designed by [@matiasbacelar](https://github.com/matiasbacelar98)
