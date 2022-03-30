@@ -118,8 +118,4 @@ export const utilityClasses = css`
     width: 100%;
     height: 100%;
   }
-
-  .box-shadow {
-    box-shadow: var(--box-shadow);
-  }
 `;
