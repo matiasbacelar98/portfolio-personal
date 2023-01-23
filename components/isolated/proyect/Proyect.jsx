@@ -5,18 +5,18 @@ import PropTypes from 'prop-types';
 import { AnimatePresence } from 'framer-motion';
 import { StyledHeadingProyects } from '@/typography';
 import { formatTitle, formatImageUrl } from '@/utils/utilities';
-import { StyledWrapper, StyledNameWrapper, ImageWrapper, StyledSpan, StyledLine } from './styles';
+import { StyledWrapper, ImageWrapper, StyledSpan, StyledLine } from './styles';
 
 const Proyect = ({ title, number, imgData }) => {
   const [isImageActive, setIsImageActive] = useState(false);
   const { url, alternativeText } = imgData;
   const proyectNumber = number + 1;
-  const isTitleTecnoshop = title === 'tecnoshop';
+  const isTitlePortfolio = title === 'portfolio';
 
   return (
     <>
       <Link
-        href={isTitleTecnoshop ? `/#proyectos` : `/proyectos/${proyectNumber}`}
+        href={isTitlePortfolio ? `/#proyectos` : `/proyectos/${proyectNumber}`}
         scroll={false}
         passHref
       >
@@ -29,10 +29,7 @@ const Proyect = ({ title, number, imgData }) => {
             <StyledLine />
           </div>
 
-          <StyledNameWrapper>
-            {isTitleTecnoshop ? <StyledSpan>Próximamente... </StyledSpan> : null}
-            <StyledHeadingProyects>{formatTitle(title)}</StyledHeadingProyects>
-          </StyledNameWrapper>
+          <StyledHeadingProyects>{formatTitle(title)}</StyledHeadingProyects>
 
           <AnimatePresence>
             {isImageActive ? (
@@ -66,7 +63,7 @@ const Proyect = ({ title, number, imgData }) => {
                     src={formatImageUrl(url)}
                     alt={alternativeText}
                     layout='fill'
-                    objectFit={isTitleTecnoshop ? 'contain' : 'cover'}
+                    objectFit='cover'
                   />
                 </div>
               </ImageWrapper>
@@ -75,7 +72,7 @@ const Proyect = ({ title, number, imgData }) => {
         </StyledWrapper>
       </Link>
 
-      {isTitleTecnoshop ? <StyledLine /> : null}
+      {isTitlePortfolio ? <StyledLine /> : null}
     </>
   );
 };
