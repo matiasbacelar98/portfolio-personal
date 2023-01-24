@@ -36,7 +36,8 @@ Home.propTypes = {
 
 // Fetching Methods
 export async function getStaticProps() {
-  const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}hover-images?populate=img
+  const response =
+    await axios.get(`${process.env.NEXT_PUBLIC_API_URL}hover-images?sort[0]=id&populate=img
   `);
 
   return {

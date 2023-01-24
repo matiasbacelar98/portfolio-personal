@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { v4 as uuidv4 } from 'uuid';
 import { motion } from 'framer-motion';
 import { useAnimateOnScroll } from '@/hooks/index';
 import { StyledH2 } from '@/typography';
@@ -16,18 +15,11 @@ const Proyects = ({ proyectsData }) => {
       </StyledH2>
 
       <motion.div initial={initialAnimValues} animate={controls} custom={1}>
-        {proyectsData.map((proyect, index) => {
+        {proyectsData.map(proyect => {
           const { title } = proyect.attributes;
-          const { url, alternativeText } = proyect.attributes.img.data.attributes;
+          const { url } = proyect.attributes.img.data.attributes;
 
-          return (
-            <Proyect
-              key={uuidv4()}
-              number={index}
-              title={title}
-              imgData={{ url, alternativeText }}
-            />
-          );
+          return <Proyect key={proyect.id} number={proyect.id} title={title} imgData={{ url }} />;
         })}
       </motion.div>
     </section>

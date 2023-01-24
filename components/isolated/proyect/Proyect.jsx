@@ -9,19 +9,17 @@ import { StyledWrapper, ImageWrapper, StyledSpan, StyledLine } from './styles';
 
 const Proyect = ({ title, number, imgData }) => {
   const [isImageActive, setIsImageActive] = useState(false);
-  const { url, alternativeText } = imgData;
-  const proyectNumber = number + 1;
   const isTitlePortfolio = title === 'portfolio';
 
   return (
     <>
-      <Link href={`/proyectos/${proyectNumber}`} scroll={false} passHref>
+      <Link href={`/proyectos/${number}`} scroll={false} passHref>
         <StyledWrapper
           onMouseEnter={() => setIsImageActive(true)}
           onMouseLeave={() => setIsImageActive(false)}
         >
           <div>
-            <StyledSpan>({`0${proyectNumber}`})</StyledSpan>
+            <StyledSpan>({`0${number}`})</StyledSpan>
             <StyledLine />
           </div>
 
@@ -56,8 +54,8 @@ const Proyect = ({ title, number, imgData }) => {
               >
                 <div className='img-container'>
                   <Image
-                    src={formatImageUrl(url)}
-                    alt={alternativeText}
+                    src={formatImageUrl(imgData.url)}
+                    alt={`${title} cover`}
                     layout='fill'
                     objectFit='cover'
                   />
@@ -79,7 +77,6 @@ Proyect.propTypes = {
   number: PropTypes.number.isRequired,
   imgData: PropTypes.shape({
     url: PropTypes.string.isRequired,
-    alternativeText: PropTypes.string.isRequired,
   }).isRequired,
 };
 
