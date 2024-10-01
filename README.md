@@ -18,33 +18,23 @@ Errors will also be displayed on the console.
 
 Next export allows you to export your Next.js application to static HTML, which can be run independently without the need for a Node.js server. For this the npm run build script is using "next build && next export".
 
-</br>
-
 ## Contents
 
 - [Screenshots](#screenshots)
 - [Technologies](#technologies)
 - [Contact](#contact)
 
-</br>
-
 ## Screenshots
 
 ![Home](https://user-images.githubusercontent.com/64114079/154753976-1e8363c4-0dea-42d9-be91-84905043dbf9.png)
 
 </br>
-</br>
-</br>
 
 ![Proyecto (Snapcode)](https://user-images.githubusercontent.com/64114079/154753911-0d9c2e1d-909f-43aa-9616-636d85680206.png)
 
 </br>
-</br>
-</br>
 
 ![Error](https://user-images.githubusercontent.com/64114079/154754029-d9c09f7e-cfe0-4fb0-b8ab-a7399742f1f9.png)
-
-</br>
 
 ## Technologies
 
@@ -54,8 +44,6 @@ Next export allows you to export your Next.js application to static HTML, which 
 - Styled Components
 - Strapi CMS
 - Vercel
-
-</br>
 
 ## Contact
 
