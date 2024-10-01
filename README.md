@@ -1,8 +1,6 @@
 # Portfolio Personal
 
-> Personal Portfolio - Matias Bacelar
-
-</br>
+> First iteration of my personal website.
 
 ## Scripts
 
@@ -54,10 +52,7 @@ Next export allows you to export your Next.js application to static HTML, which 
 - Next JS
 - Framer Motion
 - Styled Components
-- Axios
-- React intersection observer
 - Strapi CMS
-- Heroku
 - Vercel
 
 </br>
